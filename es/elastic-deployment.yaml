@@ -1,12 +1,12 @@
-apiVersion: elasticsearch.k8s.elastic.co/{eck_crd_version}
+apiVersion: elasticsearch.k8s.elastic.co/v1beta1
 kind: Elasticsearch
 metadata:
   name: quickstart
 spec:
-  version: {version}
+  version: 7.4.2
   nodeSets:
-  - name: es-cluster
-    count: 4
+  - name: default
+    count: 5
     config:
       node.master: true
       node.data: true
