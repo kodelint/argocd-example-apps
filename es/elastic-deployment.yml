@@ -1,0 +1,14 @@
+apiVersion: elasticsearch.k8s.elastic.co/{eck_crd_version}
+kind: Elasticsearch
+metadata:
+  name: quickstart
+spec:
+  version: {version}
+  nodeSets:
+  - name: es-cluster
+    count: 4
+    config:
+      node.master: true
+      node.data: true
+      node.ingest: true
+      node.store.allow_mmap: false
